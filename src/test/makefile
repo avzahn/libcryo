@@ -1,8 +1,17 @@
-listener_test:
-	clang listener.c cryo.c interpolator.c listener_test.c -o listener_test -lcurl -ljansson -lm -L.
+CC=clang
+LFLAGS=-lm -ljansson -lcurl
+LISTENERSRCS=listener.c cryo.c interpolator.c listener_test.c
+SPATH=
+
+all: listener interpolator
+
+listener: 
+	$(CC) $(LISTENERSRCS) -o listener $(LFLAGS)
 	
-curl_test:
-	clang curl_test.c -o curl_test -lcurl
+interpolator:
+	$(CC) interpolator_test.c -o interpolator
+	
+
 	
 clean:
-	rm -rf listener_test curl_test
+	rm -rf listener interpolator

@@ -5,7 +5,7 @@ int main() {
 	FILE * f;
 	interpolator * i;
 	
-	f = fopen("quad.dat","r");
+	f = fopen("../../cal/cal1","r");
 	i = interpolator_load(f);
 	fclose(f);
 	
