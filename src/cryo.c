@@ -339,11 +339,7 @@ int launch_streamer(char * hostname, char * port, char * board_url) {
 
 	json_t * req;
 	
-	fprintf(stderr,"asdf\n");
-	
 	strncpy(info.caller_name, name,INFO_CALLER_NAME_LEN);
-	
-	fprintf(stderr,"asdf\n");
 	
 	req = json_pack("{s:s,s:s,s:[s,s]}",
 		"object",
